@@ -1,0 +1,19 @@
+Database 
+Evento: {
+	key: {
+		local: String,
+		nome: String,
+		data: String,
+		hora: String,
+		classificacao: int,
+		preco: {
+			inteira: double,
+			meia: double
+		}
+	}
+}
+
+Storage 
+Evento: {
+	key: arquivo
+}
