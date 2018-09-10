@@ -148,7 +148,7 @@ class Principal extends Component {
 	    window.location.replace("/");
     }
 
-    async handleClickU(nome,keyPub,keyU) {
+    async handleClickU(nome,keyPub,keyU,dbRefList2,dbRefList3) {
         await this.setState({
             nomeChat: nome,
             keyPub: keyPub,
@@ -158,14 +158,12 @@ class Principal extends Component {
             keyR: keyU
         })
 
-        const dbRefObjec7 = window.firebase.database().ref();
-        const dbRefObjec8 = window.firebase.database().ref();
+        dbRefList2.off();
+        dbRefList3.off();
+
         let self2 = this
 
         let decrypt = new window.JSEncrypt();
-    
-        const dbRefList2 = dbRefObjec7.child('pessoas');
-        const dbRefList3 = dbRefObjec8.child('message');
 
         await dbRefList2.on('child_added', snap3 => {
 
