@@ -16,14 +16,14 @@ class Cadastro extends Component {
   }
 
   componentWillMount () {
-    const nome = this.state.nome
-    const email = this.state.email
-    const senha = this.state.senha
     localStorage.setObject("usu", []);
     const { history } = this.props
     const self = this
     window.firebase.auth().onAuthStateChanged(firebaseUser =>{
       if(firebaseUser){
+        const nome = self.state.nome
+        const email = self.state.email
+        const senha = self.state.senha
         const novocrypt = self.generateKeys();
 
         let user = {
